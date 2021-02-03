@@ -17,7 +17,6 @@ public:
         if (!root) {
             return currMin;
         }
-
         if (!root->left && root->right) {
             return GetMin(root->right, currMin + 1);
         }
