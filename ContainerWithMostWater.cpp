@@ -10,10 +10,10 @@ public:
         return height * width;
     }
 
-    int maxArea(std::vector<int>& height) {
+    int maxArea(vector<int>& height) {
 
         int currWidth = height.size() - 1;
-        int maxVol = CalcVolume(std::min(height.front(), height.back()), currWidth);
+        int maxVol = CalcVolume(min(height.front(), height.back()), currWidth);
 
         int* leftPtr = &height.front();
         int* rightPtr = &height.back();
@@ -26,7 +26,7 @@ public:
                 --rightPtr;
             }
             --currWidth;
-            int newVol = CalcVolume(std::min(*leftPtr, *rightPtr), currWidth);
+            int newVol = CalcVolume(min(*leftPtr, *rightPtr), currWidth);
 
             if (newVol > maxVol) {
                 maxVol = newVol;
